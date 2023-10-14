@@ -4,19 +4,21 @@ import matplotlib.pyplot as plt
 def calculate_spring_constants(masses, elongations):
     """
     Calculate spring constants from mass and extension data.
-#Calculation of spring constant
-spring_constant = lambda m,x: "ERROR" if x == 0 or m<0 else (m*g)/x
+    
     This function calculates spring constants using the provided mass and extension data and
     the formula (mass * acceleration due to gravity) / extension.
-# Given data (mass in grams and extension in centimeters)
+
     Parameters:
         masses (list): A list of masses (in grams) placed on the spring.
         elongations (list): A list of extensions (in centimeters) of the spring from its equilibrium position.
+
     Returns:
         list: A list of calculated spring constants.
+
     Note:
         The function assumes that the value of 'g' is approximately 981 cm/s^2.
         If an extension is zero or the mass is negative, "ERROR" is returned for the corresponding spring constant.
+
     Example:
         masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
         elongations = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
@@ -32,12 +34,12 @@ spring_constant = lambda m,x: "ERROR" if x == 0 or m<0 else (m*g)/x
     # Calculate spring constants
     test_values = map(spring_constant, masses, elongations)
     spring_constants = list(test_values)
-    
-    avg = np.average(spring_constants)*10**(-3)
-    return avg 
+
+    avg = np.average(spring_constants) * 10 ** (-3)
+    return avg
 
 def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
-      """
+    """
     Generate a scatter plot of mass vs. elongation with a best-fit trendline.
 
     Parameters:
@@ -82,6 +84,6 @@ def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
     # Save the plot as an image if a filename is provided
     if file_name:
         plt.savefig(file_name)
-        
+
     # Show the plot
     plt.show()
