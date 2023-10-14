@@ -7,42 +7,39 @@ import unittest
 from spring_const_graph import calculate_spring_constants
 
 class SpringConstantTest(unittest.TestCase):
-    """Unit tests for the spring_constant function."""
-
     def test_spring_constant_with_known_values(self):
         """Tests the spring_constant function with known values."""
 
-        mass = [1.0]  # kilograms
+        masses = [1.0]  # kilograms
         displacement = [0.01]  # meters
 
-        expected_spring_constant = 98.10  # Newtons per meter (Corrected unit)
+        expected_spring_constant = 9.81  # Newtons per meter
 
-        actual_spring_constant = calculate_spring_constants(mass, displacement)
+        actual_spring_constant = calculate_spring_constants(masses, displacement)
 
-        # Use assertAlmostEqual for floating-point comparisons
         self.assertAlmostEqual(expected_spring_constant, actual_spring_constant, places=2)
-
-    def test_spring_constant_with_zero_mass(self):
-        """Tests the spring_constant function with a zero mass."""
-
-        mass = [0.0]  # kilograms
-        displacement = [0.01]  # meters
-
-        expected_spring_constant = "ERROR"  # Newtons per meter
-
-        actual_spring_constant = calculate_spring_constants(mass, displacement)
-
-        self.assertEqual(expected_spring_constant, actual_spring_constant)
 
     def test_spring_constant_with_zero_displacement(self):
         """Tests the spring_constant function with a zero displacement."""
 
-        mass = [1.0]  # kilograms
+        masses = [1.0]  # kilograms
         displacement = [0.0]  # meters
 
-        expected_spring_constant = "ERROR"  # Newtons per meter
+        expected_spring_constant = None  # Use None for problematic data
 
-        actual_spring_constant = calculate_spring_constants(mass, displacement)
+        actual_spring_constant = calculate_spring_constants(masses, displacement)
+
+        self.assertEqual(expected_spring_constant, actual_spring_constant)
+
+    def test_spring_constant_with_zero_mass(self):
+        """Tests the spring_constant function with a zero mass."""
+
+        masses = [0.0]  # kilograms
+        displacement = [0.01]  # meters
+
+        expected_spring_constant = None  # Use None for problematic data
+
+        actual_spring_constant = calculate_spring_constants(masses, displacement)
 
         self.assertEqual(expected_spring_constant, actual_spring_constant)
 

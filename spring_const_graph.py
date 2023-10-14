@@ -25,18 +25,18 @@ def calculate_spring_constants(masses, elongations):
         spring_constants = calculate_spring_constants(masses, elongations)
         # spring_constants will contain the calculated spring constants.
     """
-    # Value of acceleration due to gravity in cm/s^2
+   # Value of acceleration due to gravity in cm/s^2
     g = 981
 
     spring_constants = []  # Initialize an empty list for the spring constants
 
     for m, x in zip(masses, elongations):
         if x == 0 or m < 0:
-            spring_constants.append("ERROR")  # Append "ERROR" for problematic data points
+            spring_constants.append(None)  # Append None for problematic data points
         else:
             spring_constants.append((m * g) / x)
 
-    avg = np.average(spring_constants) * 10 ** (-3)
+    avg = np.average([val for val in spring_constants if val is not None]) * 10 ** (-3)
     return avg
 
 def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
