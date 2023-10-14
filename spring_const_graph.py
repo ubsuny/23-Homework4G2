@@ -28,12 +28,13 @@ def calculate_spring_constants(masses, elongations):
     # Value of acceleration due to gravity in cm/s^2
     g = 981
 
-    # Calculation of spring constant
-    spring_constant = lambda m, x: "ERROR" if x == 0 or m < 0 else (m * g) / x
+    spring_constants = []  # Initialize an empty list for the spring constants
 
-    # Calculate spring constants
-    test_values = map(spring_constant, masses, elongations)
-    spring_constants = list(test_values)
+    for m, x in zip(masses, elongations):
+        if x == 0 or m < 0:
+            spring_constants.append("ERROR")  # Append "ERROR" for problematic data points
+        else:
+            spring_constants.append((m * g) / x)
 
     avg = np.average(spring_constants) * 10 ** (-3)
     return avg
