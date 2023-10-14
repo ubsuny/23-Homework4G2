@@ -13,24 +13,22 @@ class SpringConstantTest(unittest.TestCase):
         """Tests the spring_constant function with known values."""
 
         mass = [1.0]  # kilograms
-        displacement = [0.01]  # meters  (Changed to meters)
+        displacement = [0.01]  # meters
 
-        expected_spring_constant = [9810]  # Dyne per cm
+        expected_spring_constant = 981.0  # Newtons per meter (Corrected unit)
 
         actual_spring_constant = calculate_spring_constants(mass, displacement)
 
-        # Convert the actual value to Dyne per cm for comparison
-        actual_spring_constant = [val * 100]  # Convert to Dyne per cm
-
-        self.assertEqual(expected_spring_constant, actual_spring_constant)
+        # Use assertAlmostEqual for floating-point comparisons
+        self.assertAlmostEqual(expected_spring_constant, actual_spring_constant, places=2)
 
     def test_spring_constant_with_zero_mass(self):
         """Tests the spring_constant function with a zero mass."""
 
         mass = [0.0]  # kilograms
-        displacement = [0.01]  # meters  (Changed to meters)
+        displacement = [0.01]  # meters
 
-        expected_spring_constant = ["ERROR"]  # Newtons per meter (Unit corrected)
+        expected_spring_constant = "ERROR"  # Newtons per meter
 
         actual_spring_constant = calculate_spring_constants(mass, displacement)
 
@@ -42,7 +40,7 @@ class SpringConstantTest(unittest.TestCase):
         mass = [1.0]  # kilograms
         displacement = [0.0]  # meters
 
-        expected_spring_constant = ["ERROR"]  # Newtons per meter
+        expected_spring_constant = "ERROR"  # Newtons per meter
 
         actual_spring_constant = calculate_spring_constants(mass, displacement)
 
