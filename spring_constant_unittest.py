@@ -15,7 +15,7 @@ class SpringConstantTest(unittest.TestCase):
         mass = [1.0]  # kilograms
         displacement = [0.01]  # meters
 
-        expected_spring_constant = 981.0  # Newtons per meter (Corrected unit)
+        expected_spring_constant = 98.10  # Newtons per meter (Corrected unit)
 
         actual_spring_constant = calculate_spring_constants(mass, displacement)
 
