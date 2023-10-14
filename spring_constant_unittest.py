@@ -11,7 +11,7 @@ class SpringConstantTest(unittest.TestCase):
         """Tests the spring_constant function with known values."""
 
         masses = [1.0]  # kilograms
-        displacement = [0.01]  # meters
+        displacement = [1.0]  # meters
 
         expected_spring_constant = 9.81  # Newtons per meter
 
