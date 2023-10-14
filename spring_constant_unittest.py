@@ -4,6 +4,7 @@
 #use cases of the function.
 
 import unittest
+from spring_const_graph import calculate_spring_constants  # Import the function
 
 class SpringConstantTest(unittest.TestCase):
   """Unit tests for the spring_constant function."""
