@@ -36,7 +36,7 @@ def calculate_spring_constants(masses, elongations):
         else:
             spring_constants.append((m * g) / x)
 
-    avg = np.average([val for val in spring_constants if val is not None]) * 10 ** (-3)
+    avg = np.average([val for val in spring_constants if val is not None]) * 10 ** (-2)
     return avg
 
 def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
