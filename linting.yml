@@ -1,0 +1,32 @@
+name: Python Linting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10  # Change to your Python version
+
+      - name: Install dependencies
+        run: pip install pylint
+
+      - name: Run pylint
+        run: pylint your_python_directory/*.py  # Update 'your_python_directory'
+
+      - name: Upload pylint results
+        uses: actions/upload-artifact@v2
+        with:
+          name: pylint-results
+          path: ./pylint.log
