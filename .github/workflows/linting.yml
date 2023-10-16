@@ -19,6 +19,15 @@ jobs:
 
     - name: Install linter
       run: pip install pylint
+      
+    - name: Install numpy
+      run: pip install numpy
+      
+    - name: Install matplotlib
+      run: pip install matplotlib
 
     - name: Lint spring_constant_unittest.py
       run: pylint spring_constant_unittest.py
+
+    - name: Lint spring_const_graph.py
+      run: pylint spring_const_graph.py

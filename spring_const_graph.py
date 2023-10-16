@@ -1,3 +1,25 @@
+"""
+This module contains functions for calculating spring constants and creating scatter plots
+with best-fit trendlines for mass vs. elongation data.
+
+Functions:
+    - `calculate_spring_constants(masses, elongations)`: Calculates spring constants from
+      mass and extension data.
+    
+    - `plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None)`: Generates
+      a scatter plot of mass vs. elongation with a best-fit trendline.
+
+Usage:
+    To calculate spring constants, use the `calculate_spring_constants` function by providing
+    lists of masses (in grams) and elongations (in centimeters) as input. The function returns
+    a list of calculated spring constants. Note that it assumes the value of 'g' to be
+    approximately 981 cm/s^2.
+
+    To create a scatter plot with a best-fit trendline, use the
+    `plot_mass_vs_extension_with_trendline` function by providing lists of mass values and
+    elongation values. You can also specify an optional `file_name` to save the plot as an
+    image.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,14 +32,17 @@ def calculate_spring_constants(masses, elongations):
 
     Parameters:
         masses (list): A list of masses (in grams) placed on the spring.
-        elongations (list): A list of extensions (in centimeters) of the spring from its equilibrium position.
+        elongations (list): A list of extensions (in centimeters) of the 
+        spring from its equilibrium position.
 
     Returns:
         list: A list of calculated spring constants.
 
     Note:
-        The function assumes that the value of 'g' is approximately 981 cm/s^2.
-        If an extension is zero or the mass is negative, "ERROR" is returned for the corresponding spring constant.
+        The function assumes that the value of 'g' is approximately 
+        981 cm/s^2.
+        If an extension is zero or the mass is negative, "ERROR" is 
+        returned for the corresponding spring constant.
 
     Example:
         masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
@@ -59,8 +84,9 @@ def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
 
     Example usage:
     >>> masses = [1, 2, 3, 4, 5]
-    >>> elongations = [2, 4, 5, 4, 6]
-    >>> plot_mass_vs_extension_with_trendline(masses, elongations, file_name='mass_vs_extension.png')
+    >>> elongations = [2, 4, 5, 4, 6] \
+    >>> plot_mass_vs_extension_with_trendline \
+    (masses, elongations, file_name='mass_vs_extension.png')
     """
     # Fit a linear trendline
     slope, intercept = np.polyfit(masses, elongations, 1)
@@ -80,7 +106,8 @@ def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
     plt.legend()
 
     # Display the equation of the best-fit line
-    plt.text(0.5, 0.5, f'Equation: y = {slope:.4f}x + {intercept:.4f}', transform=plt.gca().transAxes)
+    plt.text(0.5, 0.5, f'Equation: y = {slope:.4f}x + {intercept:.4f}', \
+             transform=plt.gca().transAxes)
 
     # Save the plot as an image if a filename is provided
     if file_name:
