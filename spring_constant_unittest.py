@@ -7,6 +7,7 @@ import unittest
 from spring_const_graph import calculate_spring_constants
 
 class SpringConstantTest(unittest.TestCase):
+    """Unit tests for the spring_constant function."""
     def test_spring_constant_with_known_values(self):
         """Tests the spring_constant function with known values."""
 
