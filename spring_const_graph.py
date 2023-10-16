@@ -10,14 +10,17 @@ def calculate_spring_constants(masses, elongations):
 
     Parameters:
         masses (list): A list of masses (in grams) placed on the spring.
-        elongations (list): A list of extensions (in centimeters) of the spring from its equilibrium position.
+        elongations (list): A list of extensions (in centimeters) of the 
+        spring from its equilibrium position.
 
     Returns:
         list: A list of calculated spring constants.
 
     Note:
-        The function assumes that the value of 'g' is approximately 981 cm/s^2.
-        If an extension is zero or the mass is negative, "ERROR" is returned for the corresponding spring constant.
+        The function assumes that the value of 'g' is approximately 
+        981 cm/s^2.
+        If an extension is zero or the mass is negative, "ERROR" is 
+        returned for the corresponding spring constant.
 
     Example:
         masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
@@ -59,8 +62,9 @@ def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
 
     Example usage:
     >>> masses = [1, 2, 3, 4, 5]
-    >>> elongations = [2, 4, 5, 4, 6]
-    >>> plot_mass_vs_extension_with_trendline(masses, elongations, file_name='mass_vs_extension.png')
+    >>> elongations = [2, 4, 5, 4, 6] \
+    >>> plot_mass_vs_extension_with_trendline
+    \(masses, elongations, file_name='mass_vs_extension.png')
     """
     # Fit a linear trendline
     slope, intercept = np.polyfit(masses, elongations, 1)
