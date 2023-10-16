@@ -22,3 +22,6 @@ jobs:
 
     - name: Lint spring_constant_unittest.py
       run: pylint spring_constant_unittest.py
+
+    - name: Lint spring_const_graph.py
+      run: pylint spring_const_graph.py
