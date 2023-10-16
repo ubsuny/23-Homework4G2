@@ -23,4 +23,3 @@ class SpringConstantTest(unittest.TestCase):
         self.assertAlmostEqual(expected_spring_constant, actual_spring_constant, places=2)
 if __name__ == '__main__':
     unittest.main()
-    
