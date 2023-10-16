@@ -1,3 +1,25 @@
+"""
+This module contains functions for calculating spring constants and creating scatter plots
+with best-fit trendlines for mass vs. elongation data.
+
+Functions:
+    - `calculate_spring_constants(masses, elongations)`: Calculates spring constants from
+      mass and extension data.
+    
+    - `plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None)`: Generates
+      a scatter plot of mass vs. elongation with a best-fit trendline.
+
+Usage:
+    To calculate spring constants, use the `calculate_spring_constants` function by providing
+    lists of masses (in grams) and elongations (in centimeters) as input. The function returns
+    a list of calculated spring constants. Note that it assumes the value of 'g' to be
+    approximately 981 cm/s^2.
+
+    To create a scatter plot with a best-fit trendline, use the
+    `plot_mass_vs_extension_with_trendline` function by providing lists of mass values and
+    elongation values. You can also specify an optional `file_name` to save the plot as an
+    image.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
