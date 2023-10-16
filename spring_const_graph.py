@@ -63,8 +63,8 @@ def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
     Example usage:
     >>> masses = [1, 2, 3, 4, 5]
     >>> elongations = [2, 4, 5, 4, 6] \
-    >>> plot_mass_vs_extension_with_trendline
-    \(masses, elongations, file_name='mass_vs_extension.png')
+    >>> plot_mass_vs_extension_with_trendline \
+    (masses, elongations, file_name='mass_vs_extension.png')
     """
     # Fit a linear trendline
     slope, intercept = np.polyfit(masses, elongations, 1)
@@ -84,7 +84,8 @@ def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
     plt.legend()
 
     # Display the equation of the best-fit line
-    plt.text(0.5, 0.5, f'Equation: y = {slope:.4f}x + {intercept:.4f}', transform=plt.gca().transAxes)
+    plt.text(0.5, 0.5, f'Equation: y = {slope:.4f}x + {intercept:.4f}', \
+             transform=plt.gca().transAxes)
 
     # Save the plot as an image if a filename is provided
     if file_name:
