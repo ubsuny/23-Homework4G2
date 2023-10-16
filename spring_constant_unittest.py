@@ -1,12 +1,21 @@
-#This unit test tests the cases of a spring constant with a known (real) value,
-#as well as the two main cases that would give errors/non physical results
-#(zero mass and zero displacement.) This should cover all possible
-#use cases of the function.
+"""
+This module contains unit tests for the spring_constant function.
+
+The `SpringConstantTest` class is designed to test the behavior of the `calculate_spring_constants`
+function when provided with known input values. The tests check whether the function correctly
+calculates the spring constant given mass and displacement values.
+
+Example:
+    To run the tests, execute this module directly or use a test runner like `unittest.main()`.
+
+"""
+
 
 import unittest
 from spring_const_graph import calculate_spring_constants
 
 class SpringConstantTest(unittest.TestCase):
+     """Unit tests for the spring_constant function."""
     def test_spring_constant_with_known_values(self):
         """Tests the spring_constant function with known values."""
 
