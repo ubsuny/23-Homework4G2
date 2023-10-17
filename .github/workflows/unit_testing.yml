@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # allows this file to see other files in repository
     - name: Set up Python
-      uses: actions/setup-python@v2 #installs python
+      uses: actions/setup-python@v2 # installs python
       with:
         python-version: '3.10' # specify python version
     - name: Install dependencies # which libraries do we need for testing
@@ -22,7 +22,7 @@ jobs:
       run: pip install matplotlib
     - name: Test with pytest
 
-    # runs unit test on file named"spring_constant_unittest.py" using pytest
+    # runs unit test on file named "spring_constant_unittest.py" using pytest
       run: |
         pip install pytest
         pytest spring_constant_unittest.py
