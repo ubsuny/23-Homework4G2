@@ -33,3 +33,7 @@ jobs:
       # lints file named "pylint spring_const_graph.py" using pylint
     - name: Lint spring_const_graph.py
       run: pylint spring_const_graph.py
+
+      # lints file named "main.py" using pylint
+    - name: main.py
+      run: pylint main.py
